@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>h5 file upload</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<form action="jsvascript:void(0);">  
+	    <fieldset>  
+	        <legend>分度读取文件：</legend>  
+	        <input type="file" id="File" multiple />  
+	        <input type="button" value="中断" id="Abort"/>  
+	        <p>  
+	            <label>读取进度：</label><progress id="Progress" value="0" max="100"></progress>  
+	        </p>  
+	        <button type="button" onclick="upload()">上传</button>
+	        <p id="Status"></p>  
+	        <img id="preview" src="" />
+	        <p id="fileContent"></p>
+	    </fieldset>  
+	</form>  
+
+
+
+</body>
+<script type="text/javascript" src="upload.js"></script>
+<script type="text/javascript">
+	function upload() {
+		H5Upload.upload();
+	}
+</script>
+</html>

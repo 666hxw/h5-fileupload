@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>h5 文件操作</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>  
+    <fieldset>  
+        <legend>分度读取文件：</legend>  
+        <input type="file" id="File" multiple />  
+        <input type="button" value="中断" id="Abort"/>  
+        <p>  
+            <label>读取进度：</label><progress id="Progress" value="0" max="100"></progress>  
+        </p>  
+        <p id="Status"></p>  
+        <img id="preview" src="" />
+        <p id="fileContent"></p>
+    </fieldset>  
+</form>  
+</body>
+<script type="text/javascript" src="file.js"></script>
+<script type="text/javascript">
+	
+	var blob = new Blob(["Hello World"]);
+
+	var body = document.getElementsByTagName('body')[0];
+	var a = document.createElement("a");
+	a.href = window.URL.createObjectURL(blob);
+	a.download = "hello-world.txt";
+	a.textContent = "Download Hello World!";
+
+	body.appendChild(a);
+
+</script>
+</html>
